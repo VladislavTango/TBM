@@ -1,0 +1,6 @@
+@QuarterService_HostAddress = http://localhost:5193
+
+GET {{QuarterService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
