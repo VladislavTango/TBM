@@ -44,6 +44,8 @@ namespace QuarterService.Infrastructure.Service
                 }
                 if (errorCode == InvalidSymbol) 
                 {
+                    if (symbol.Split("_").Length < 2) throw new Exception("нет такой валюты");
+
                     string correctSymbol = await FindNearestContract(symbol);
                     return await GetCandlestickData(correctSymbol, timeFrame);
                 }

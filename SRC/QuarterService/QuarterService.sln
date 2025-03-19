@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.DataPersista
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.Infrastructure", "QuarterService.Infrastructure\QuarterService.Infrastructure.csproj", "{4850C741-5769-413F-A110-4370B71608D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonShared", "CommonShared\CommonShared.csproj", "{C0AAC078-6A0D-4BCB-905D-955CDB34418A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4850C741-5769-413F-A110-4370B71608D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4850C741-5769-413F-A110-4370B71608D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4850C741-5769-413F-A110-4370B71608D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
