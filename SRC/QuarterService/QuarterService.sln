@@ -4,14 +4,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.API", "QuarterService\QuarterService.API.csproj", "{90BD1CFF-C8B3-4997-B529-D3304816CBAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4850C741-5769-413F-A110-4370B71608D9} = {4850C741-5769-413F-A110-4370B71608D9}
+		{81387EA6-1B84-41C8-B1A5-559CF0AE7310} = {81387EA6-1B84-41C8-B1A5-559CF0AE7310}
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A} = {C0AAC078-6A0D-4BCB-905D-955CDB34418A}
+		{E3A64ABE-E46F-4FB4-9AF1-779051C0F07F} = {E3A64ABE-E46F-4FB4-9AF1-779051C0F07F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.Domain", "QuarterService.Domain\QuarterService.Domain.csproj", "{E3A64ABE-E46F-4FB4-9AF1-779051C0F07F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A} = {C0AAC078-6A0D-4BCB-905D-955CDB34418A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.Application", "QuarterService.Application\QuarterService.Application.csproj", "{81387EA6-1B84-41C8-B1A5-559CF0AE7310}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F25ED1C-4F41-4AC1-A6B1-6CA80E593024} = {3F25ED1C-4F41-4AC1-A6B1-6CA80E593024}
+		{4850C741-5769-413F-A110-4370B71608D9} = {4850C741-5769-413F-A110-4370B71608D9}
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A} = {C0AAC078-6A0D-4BCB-905D-955CDB34418A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.DataPersistance", "QuarterService.DataPersistance\QuarterService.DataPersistance.csproj", "{3F25ED1C-4F41-4AC1-A6B1-6CA80E593024}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A} = {C0AAC078-6A0D-4BCB-905D-955CDB34418A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarterService.Infrastructure", "QuarterService.Infrastructure\QuarterService.Infrastructure.csproj", "{4850C741-5769-413F-A110-4370B71608D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F25ED1C-4F41-4AC1-A6B1-6CA80E593024} = {3F25ED1C-4F41-4AC1-A6B1-6CA80E593024}
+		{C0AAC078-6A0D-4BCB-905D-955CDB34418A} = {C0AAC078-6A0D-4BCB-905D-955CDB34418A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonShared", "CommonShared\CommonShared.csproj", "{C0AAC078-6A0D-4BCB-905D-955CDB34418A}"
 EndProject

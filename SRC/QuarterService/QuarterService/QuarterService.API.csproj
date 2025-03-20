@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommonShared\CommonShared.csproj" />
+    <ProjectReference Include="..\QuarterService.Application\QuarterService.Application.csproj" />
     <ProjectReference Include="..\QuarterService.DataPersistance\QuarterService.DataPersistance.csproj" />
+    <ProjectReference Include="..\QuarterService.Infrastructure\QuarterService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

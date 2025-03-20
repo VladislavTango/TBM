@@ -1,33 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using QuarterService.DataPersistance.AppContext;
-using QuarterService.Domain.Entities;
+﻿using CommonShared;
+using Microsoft.AspNetCore.Mvc;
+using QuarterService.Application.Futures.Requests;
 
 namespace QuarterService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController : ControllerBaseApi
     {
-        AppDbContext db;
-
-        public ValuesController(AppDbContext db)
+        [HttpPost("FuturesDiff")]
+        public async Task<IActionResult> RegistrationUser(GetDifferenseFuturesRequest request)
         {
-            this.db = db;
-        }
-
-        [HttpPost("RegistrationCreater")]
-        public async Task<IActionResult> RegistrationUser(int request)
-        {
-            var t = new FuturesDifference()
-            {
-                Difference = 1,
-                BiQuarterFuturesPrice = 1,
-                QuarterFuturesPrice = 1,
-                Timestamp = DateTime.UtcNow,
-            };
-            db.FuturesDifference.Add(t);
-            db.SaveChanges();
-            return Ok(1);
+            var responce = await Mediator.Send(request);
+            return Ok(responce);
         }
     }
 }

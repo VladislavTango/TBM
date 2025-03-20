@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using QuarterService.Domain.Enums;
-using QuarterService.Infrastructure.DTO;
 using QuarterService.Infrastructure.Interfaces;
 using QuarterService.Infrastructure.Static;
 using System.Globalization;
@@ -20,7 +19,7 @@ namespace QuarterService.Infrastructure.Service
             _httpClient = httpClient;
         }
 
-        public async Task<CandlestickDataBinance> GetCandlestickData(string symbol, TimeFrameEnum timeFrame)
+        public async Task<Decimal> GetCandlestickHighPrice(string symbol, TimeFrameEnum timeFrame)
         {
             string timeFrameStr = timeFrame.GetEnumDescription();
 
@@ -37,9 +36,9 @@ namespace QuarterService.Infrastructure.Service
                 if (errorCode == InvalidInterval)
                 {
                      if(timeFrameStr == "1M")
-                        return await GetCandlestickData(symbol, 0);
+                        return await GetCandlestickHighPrice(symbol, 0);
                      else
-                        return await GetCandlestickData(symbol, timeFrame+1);
+                        return await GetCandlestickHighPrice(symbol, timeFrame+1);
 
                 }
                 if (errorCode == InvalidSymbol) 
@@ -47,14 +46,14 @@ namespace QuarterService.Infrastructure.Service
                     if (symbol.Split("_").Length < 2) throw new Exception("нет такой валюты");
 
                     string correctSymbol = await FindNearestContract(symbol);
-                    return await GetCandlestickData(correctSymbol, timeFrame);
+                    return await GetCandlestickHighPrice(correctSymbol, timeFrame);
                 }
                 throw new Exception($"неизвестаня ошибка API {errorCode}");
             }
 
-            var candlestickList = JsonConvert.DeserializeObject<List<CandlestickDataBinance>>(responseBody);
+            var HighPrice = JsonConvert.DeserializeObject<List<object[]>>(responseBody);
 
-            return candlestickList.Last();
+            return Convert.ToDecimal(HighPrice.Last()[2].ToString().Replace(".",",")); 
         }
         private async Task<string> FindNearestContract(string targetSymbol)
         {

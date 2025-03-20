@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Futures\Response\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuarterService.Domain\QuarterService.Domain.csproj" />
+    <ProjectReference Include="..\QuarterService.Infrastructure\QuarterService.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
