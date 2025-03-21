@@ -8,13 +8,13 @@ namespace QuarterService.API.Controllers
     [ApiController]
     public class FuturesController : ControllerBaseApi
     {
-        [HttpPost]
-        public async Task<IActionResult> RegistrationUser(GetDifferenseFuturesRequest request)
+        [HttpPost("GetDifferenseFutures")]
+        public async Task<IActionResult> GetDifferenseFutures(GetDifferenseFuturesRequest request)
         {
             var responce = await Mediator.Send(request);
             return Ok(responce);
         }
-        [HttpGet]
+        [HttpGet("GatewayTest")]
         public async Task<IActionResult> GatewayTest()
         {
             return Ok("ОК");
